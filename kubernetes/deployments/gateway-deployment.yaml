@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: jankenpon-gateway
+        blinkt: show
+        blinktColor: "FF0000"
     spec:
       serviceAccountName: jankenpon-gateway-sa
       containers:

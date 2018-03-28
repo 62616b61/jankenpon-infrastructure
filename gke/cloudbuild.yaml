@@ -34,7 +34,7 @@ steps:
     args:
       - '-c'
       - |
-        kubectl apply --recursive -f kubernetes
+        kubectl apply --recursive -f gke/kubernetes/
     volumes:
       - name: 'kube'
         path: /kube

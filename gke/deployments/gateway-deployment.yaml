@@ -14,7 +14,7 @@ spec:
       labels:
         app: jankenpon-gateway
         blinkt: show
-        blinktColor: "FF0000"
+        blinktColor: FF0000
     spec:
       serviceAccountName: jankenpon-gateway-sa
       containers:

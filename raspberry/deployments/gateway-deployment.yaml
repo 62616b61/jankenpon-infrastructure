@@ -1,0 +1,27 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: jankenpon-gateway
+  namespace: default
+  labels:
+    app: jankenpon-gateway
+spec:
+  selector:
+    matchLabels:
+      app: jankenpon-gateway
+  template:
+    metadata:
+      labels:
+        app: jankenpon-gateway
+        blinkt: show
+        blinktColor: FF0000
+    spec:
+      serviceAccountName: jankenpon-gateway-sa
+      containers:
+      - image: kurai/jankenpon-gateway-arm
+        imagePullPolicy: Always
+        name: gateway
+        ports:
+        - containerPort: 3030
+          name: http
+          protocol: TCP

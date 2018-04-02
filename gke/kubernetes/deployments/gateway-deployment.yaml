@@ -13,8 +13,6 @@ spec:
     metadata:
       labels:
         app: jankenpon-gateway
-        blinkt: show
-        blinktColor: FF0000
     spec:
       serviceAccountName: jankenpon-gateway-sa
       containers:
@@ -23,5 +21,15 @@ spec:
         name: gateway
         ports:
         - containerPort: 3030
-          name: http
+          name: socket-port
           protocol: TCP
+        readinessProbe:
+          tcpSocket:
+            port: socket-port
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: socket-port
+          initialDelaySeconds: 15
+          periodSeconds: 20

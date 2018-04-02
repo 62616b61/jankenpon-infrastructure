@@ -5,10 +5,6 @@ metadata:
 #  annotations:
 #    kubernetes.io/ingress.global-static-ip-name: jankenpon-gateway-ip
 spec:
-  rules:
-  - host: jankenpon
-    http:
-      paths:
-      - backend:
-          serviceName: jankenpon-gateway-service
-          servicePort: 80
+  backend:
+    serviceName: jankenpon-gateway-service
+    servicePort: 80

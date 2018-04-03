@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: jankenpon-client
+        blinkt: show
+        blinktColor: 00FF00
     spec:
       containers:
       - image: kurai/jankenpon-client-arm

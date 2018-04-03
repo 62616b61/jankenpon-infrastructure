@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jankenpon-client-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: jankenpon-client
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: frontend-port
+      nodePort: 30301

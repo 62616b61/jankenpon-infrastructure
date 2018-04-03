@@ -25,3 +25,6 @@ spec:
         - containerPort: 3030
           name: http
           protocol: TCP
+        env:
+        - name: RUNTIME
+          value: "raspi"

@@ -23,6 +23,9 @@ spec:
         - containerPort: 3030
           name: socket-port
           protocol: TCP
+        env:
+        - name: RUNTIME
+          value: "gke"
         readinessProbe:
           tcpSocket:
             port: socket-port

@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: jankenpon-client-service
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: client-gateway
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: frontend-port

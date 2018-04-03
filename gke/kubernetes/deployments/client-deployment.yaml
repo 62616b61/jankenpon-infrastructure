@@ -1,0 +1,24 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: jankenpon-client
+  namespace: default
+  labels:
+    app: jankenpon-client
+spec:
+  selector:
+    matchLabels:
+      app: jankenpon-client
+  template:
+    metadata:
+      labels:
+        app: jankenpon-client
+    spec:
+      containers:
+      - image: kurai/jankenpon-client-amd64
+        imagePullPolicy: Always
+        name: client
+        ports:
+        - containerPort: 3000
+          name: frontend-port
+          protocol: TCP
